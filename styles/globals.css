@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    font-display: swap;
+    font-weight: 100 900;
+    src: url("/assets/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
+      format("truetype");
+  }
+  h1 {
+    @apply font-bold text-3xl;
+  }
+  h2 {
+    @apply font-bold text-2xl;
+  }
+  h3 {
+    @apply font-bold text-xl;
+  }
+  h4 {
+    @apply font-bold text-sm uppercase;
+    letter-spacing: 2.4px;
+  }
+}
+
+.modal-content {
+  @apply w-full md:min-w-[480px]  bg-white dark:bg-black2 p-8 rounded-md;
+}
+
+.app-container {
+  @apply flex-1 flex overflow-auto  relative;
+}
+.app-container--visible {
+  width: calc(100%);
+  left: 0px;
+  transition: all 0.5s ease;
+}
+.app-container--hidden {
+  width: calc(100% + 300px);
+  left: -300px;
+  transition: all 0.5s ease;
+}
